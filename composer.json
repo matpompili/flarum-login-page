@@ -1,0 +1,30 @@
+{
+    "name": "matpompili/flarum-login-page",
+    "description": "Display a login page as front page",
+    "type": "flarum-extension",
+    "license":"MIT",
+    "authors": [
+      {
+        "name": "Matteo Pompili",
+        "email": "matpompili@gmail.com"
+      }
+    ],
+    "require": {
+        "flarum/core": "^0.1.0-beta.3"
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Login Page",
+            "icon": {
+                "name": "lock",
+                "backgroundColor": "#000",
+                "color": "#fff"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Matpompili\\Login\\Page\\": "src/"
+        }
+    }
+}

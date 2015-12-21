@@ -1,0 +1,91 @@
+@import url(https://fonts.googleapis.com/css?family=Rancho);
+
+.fullPage {
+  &.Modal {
+    margin: 0 auto;
+    padding: 0;
+    max-width: none;
+    height: 100%;
+    background-color: @primary-color;
+    align-items: center;
+    display: flex;
+
+    & > .Modal-content {
+      border-radius: 0;
+      box-shadow: none;
+      background-color: @primary-color;
+      padding: 3rem 0px;
+      flex: 1 1 0%;
+
+      & > form {
+        max-width: 25rem;
+        margin: 0 auto;
+
+        & > .Modal-header {
+          & > h3 {
+            text-indent: -1000rem;
+          }
+        }
+
+        & > .Modal-body {
+          background-color: @primary-color;
+          text-align: center;
+
+          & > .logo {
+            margin: 0 auto;
+            //padding: 10rem 0;
+
+            & > img {
+              max-width: 15rem;
+            }
+
+            & > h1 {
+              font-family: 'Rancho', cursive;
+              font-size: 3em;
+              color: #fff;
+            }
+          }
+
+          & > .Form {
+
+            & > .Form-group {
+
+              & > .FormControl {
+                height: 50px;
+                padding: 15px 20px;
+                font-size: 15px;
+                border: 2px solid transparent;
+                border-radius: 4px;
+                text-align: center;
+              }
+
+              & > .Button {
+                background-color: darken(@primary-color, 10%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.ModalManager{
+    padding: 0 !important;
+
+    &:before {
+      height: 0px;
+      border-bottom: 0px;
+    }
+  }
+
+}
+
+// .Modal--fullPage > .Modal-content {
+//   border-radius: 0;
+//   box-shadow: none;
+//   background-color: @primary-color;
+// }
+//
+// .Modal--fullPage > .Modal-content > form > .Modal-body {
+//   background-color: @primary-color;
+// }
