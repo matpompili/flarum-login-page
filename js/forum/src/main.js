@@ -8,7 +8,7 @@
 */
 import { extend } from 'flarum/extend';
 import IndexPage from 'flarum/components/IndexPage'
-import DiscussionPage from 'flarum/components/DiscussionPage'
+// import DiscussionPage from 'flarum/components/DiscussionPage'
 import FullPageLogInModal from 'matpompili/login-page/components/FullPageLogInModal'
 
 app.initializers.add('matpompili-login-page', app => {
@@ -20,11 +20,11 @@ app.initializers.add('matpompili-login-page', app => {
     }
   });
 
-  extend(DiscussionPage.prototype, 'init', function(){
-    if(!app.session.user) {
-      var myModal = new FullPageLogInModal();
-      app.modal.show(myModal);
-      $(myModal.element.parentNode).addClass('fullPage').css('padding-right', '');
-    }
-  });
+  // extend(DiscussionPage.prototype, 'init', function(){
+  //   if(!app.session.user) {
+  //     var myModal = new FullPageLogInModal();
+  //     app.modal.show(myModal);
+  //     $(myModal.element.parentNode).addClass('fullPage').css('padding-right', '');
+  //   }
+  // });
 });

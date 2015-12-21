@@ -117,23 +117,6 @@ System.register('matpompili/login-page/components/FullPageLogInModal', ['flarum/
                   })
                 )
               )
-            ), m(
-              'div',
-              { className: 'Modal-footer' },
-              m(
-                'p',
-                { className: 'LogInModal-forgotPassword' },
-                m(
-                  'a',
-                  { onclick: this.forgotPassword.bind(this) },
-                  app.translator.trans('core.forum.log_in.forgot_password_link')
-                )
-              ),
-              app.forum.attribute('allowSignUp') ? m(
-                'p',
-                { className: 'LogInModal-signUp' },
-                app.translator.trans('core.forum.log_in.sign_up_text', { a: m('a', { onclick: this.signUp.bind(this) }) })
-              ) : ''
             )];
           }
 
@@ -250,7 +233,7 @@ System.register('matpompili/login-page/components/FullPageLogInModal', ['flarum/
     }
   };
 });;
-System.register('matpompili/login-page/main', ['flarum/extend', 'flarum/components/IndexPage', 'flarum/components/DiscussionPage', 'matpompili/login-page/components/FullPageLogInModal'], function (_export) {
+System.register('matpompili/login-page/main', ['flarum/extend', 'flarum/components/IndexPage', 'matpompili/login-page/components/FullPageLogInModal'], function (_export) {
   /*
   * This file is part of flarum-login-page.
   *
@@ -261,14 +244,13 @@ System.register('matpompili/login-page/main', ['flarum/extend', 'flarum/componen
   */
   'use strict';
 
-  var extend, IndexPage, DiscussionPage, FullPageLogInModal;
+  // import DiscussionPage from 'flarum/components/DiscussionPage'
+  var extend, IndexPage, FullPageLogInModal;
   return {
     setters: [function (_flarumExtend) {
       extend = _flarumExtend.extend;
     }, function (_flarumComponentsIndexPage) {
       IndexPage = _flarumComponentsIndexPage['default'];
-    }, function (_flarumComponentsDiscussionPage) {
-      DiscussionPage = _flarumComponentsDiscussionPage['default'];
     }, function (_matpompiliLoginPageComponentsFullPageLogInModal) {
       FullPageLogInModal = _matpompiliLoginPageComponentsFullPageLogInModal['default'];
     }],
@@ -283,13 +265,13 @@ System.register('matpompili/login-page/main', ['flarum/extend', 'flarum/componen
           }
         });
 
-        extend(DiscussionPage.prototype, 'init', function () {
-          if (!app.session.user) {
-            var myModal = new FullPageLogInModal();
-            app.modal.show(myModal);
-            $(myModal.element.parentNode).addClass('fullPage').css('padding-right', '');
-          }
-        });
+        // extend(DiscussionPage.prototype, 'init', function(){
+        //   if(!app.session.user) {
+        //     var myModal = new FullPageLogInModal();
+        //     app.modal.show(myModal);
+        //     $(myModal.element.parentNode).addClass('fullPage').css('padding-right', '');
+        //   }
+        // });
       });
     }
   };
