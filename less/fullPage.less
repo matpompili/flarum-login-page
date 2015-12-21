@@ -20,8 +20,11 @@
       & > form {
         max-width: 25rem;
         margin: 0 auto;
+        .centerDiv;
 
         & > .Modal-header {
+          display: none;
+
           & > h3 {
             text-indent: -1000rem;
           }
@@ -30,13 +33,17 @@
         & > .Modal-body {
           background-color: @primary-color;
           text-align: center;
+          display: flex;
+          flex-direction: column;
+          .centerDiv;
 
           & > .logo {
             margin: 0 auto;
+            margin-top: auto;
             //padding: 10rem 0;
 
             & > img {
-              max-width: 6rem;
+              max-height: 9rem;
             }
 
             & > h1 {
@@ -47,6 +54,7 @@
           }
 
           & > .Form {
+            margin-bottom: auto;
 
             & > .Form-group {
 
@@ -80,12 +88,10 @@
 
 }
 
-// .Modal--fullPage > .Modal-content {
-//   border-radius: 0;
-//   box-shadow: none;
-//   background-color: @primary-color;
-// }
-//
-// .Modal--fullPage > .Modal-content > form > .Modal-body {
-//   background-color: @primary-color;
-// }
+.centerDiv {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
